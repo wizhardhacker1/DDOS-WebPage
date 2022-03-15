@@ -18,6 +18,5 @@ HTML Page DDOS
   5.) Drag file to Tor browser 
   
   6.) leave page open and DDOS will run on sites
-  
-	
-![DDOS-sample](https://user-images.githubusercontent.com/46620390/158326802-ebafc133-d7ed-4a20-83b8-7cca8d480aa2.png)
+![DDOS-sample](https://user-images.githubusercontent.com/46620390/158327277-a801673f-335f-4a77-a1dc-a0fd42b0a2c4.png)
+
