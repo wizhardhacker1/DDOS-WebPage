@@ -8,15 +8,12 @@ HTML Page DDOS
 2.) Save to folder or add to hosted web site (onion)
 
 3.) Edit Script and add websites to DDOS - remove the examples 
-  'https://4.io/',
-  'https://3.net',
-  'https://2.org/',
-  'https://www.1.com/',
+
+ 4.) Make sure you are connected to VPN and have TOR browser installed
   
-  4.) Make sure you are connected to VPN and have TOR browser installed
-  
-  5.) Drag file to Tor browser 
+ 5.) Drag file to Tor browser 
   
   6.) leave page open and DDOS will run on sites
-![DDOS-sample](https://user-images.githubusercontent.com/46620390/158327277-a801673f-335f-4a77-a1dc-a0fd42b0a2c4.png)
+![demo](https://user-images.githubusercontent.com/46620390/158417269-3f5ccfd0-2542-407b-ab2f-f251e2ad31ac.jpg)
+
 
