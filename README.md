@@ -2,6 +2,7 @@
 HTML Page DDOS 
 
 *** FOR EDUCATION PURPOSES ONLY *** NOT RESPONISBLE FOR MISUSE!!
+
 1.) Download file  (html file)
 2.) Save to folder or add to hosted TOR site
 3.) Edit Script and add websites to DDOS - remove the examples 
