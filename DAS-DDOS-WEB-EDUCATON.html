@@ -53,7 +53,7 @@ targets.forEach((target) => {
 
 var statsEl = document.getElementById('stats');
 function printStats() {
-  statsEl.innerHTML = '<table id="t1" border="1" width="100%" align="left"><thead><tr><th align="left" bgcolor="white"> Website</th><th align="left" bgcolor="white">DDos Packets/th><th align="left" bgcolor="white"> Packet Errors</th></tr></thead><tbody>' + Object.entries(targetStats).map(([target, { number_of_requests, number_of_errored_responses  }]) => '<tr><td>' + target + '</td><th align="left" bgcolor="white">' + number_of_requests + '</td><td>' + number_of_errored_responses + '</td></tr>').join('') + '</tbody></table>'
+  statsEl.innerHTML = '<table id="t1" border="1" width="100%" align="left"><thead><tr><th align="left" bgcolor="white"> Website or URL</th><th align="left" bgcolor="white">DDos Packets</th><th align="left" bgcolor="white"> Packet Errors</th></tr></thead><tbody>' + Object.entries(targetStats).map(([target, { number_of_requests, number_of_errored_responses  }]) => '<tr><td>' + target + '</td><th align="left" bgcolor="white">' + number_of_requests + '</td><td>' + number_of_errored_responses + '</td></tr>').join('') + '</tbody></table>'
 }
 setInterval(printStats, 1000);
 
