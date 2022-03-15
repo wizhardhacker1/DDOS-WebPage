@@ -20,4 +20,4 @@ HTML Page DDOS
   6.) leave page open and DDOS will run on sites
   
 	
-![DDOS-sample](https://user-images.githubusercontent.com/46620390/158325178-a0a23c55-ea57-46a4-bbce-faaa66dae812.png)
+![DDOS-sample](https://user-images.githubusercontent.com/46620390/158326802-ebafc133-d7ed-4a20-83b8-7cca8d480aa2.png)
