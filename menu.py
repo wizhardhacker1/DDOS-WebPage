@@ -2,7 +2,6 @@
 import os
 import random
 import time
-
 import requests
 import wget
 from colorama import Back, Fore
