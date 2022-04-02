@@ -1,17 +1,16 @@
 # import all modules
+import os
 import random
 import time
-import wget
+
 import requests
-import os
+import wget
 from colorama import Back, Fore
 from random_user_agent.params import SoftwareName, OperatingSystem
 from random_user_agent.user_agent import UserAgent
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
-from pathlib import Path
-
 
 # clean old proxy file https.txt and create new one
 os.remove('https-downloaded.txt')
@@ -27,8 +26,9 @@ time.sleep(5)
 url = "https://raw.githubusercontent.com/mertguvencli/http-proxy-list/main/proxy-list/data.txt"
 wget.download(url, 'https-downloaded.txt')
 
-# setting proxy file var
-myproxy = 'https-downloaded.txt'
+# setting proxy file var  - http.txt is a custom - not automatic updated
+myproxy = 'https.txt'
+
 
 # define colors
 class Bcolors:
@@ -97,7 +97,7 @@ for i in range(5):
     proxy = random_ip
 
 print()
-print(Bcolors.RAND + 'Please wait.. We are Testing all Proxies...')
+print(Fore.RED + Back.BLACK + 'Please wait.. We are Testing all Proxies...')
 print()
 
 # creating random proxy 2
