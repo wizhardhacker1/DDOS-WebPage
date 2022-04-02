@@ -17,7 +17,9 @@ HTML Page DDOS
 ![demo](https://user-images.githubusercontent.com/46620390/158417269-3f5ccfd0-2542-407b-ab2f-f251e2ad31ac.jpg)
 
 
-This is the python menu starter ( starts up 4 urls with different proxies) - if you take the DDOS html page and upload it to webserver you can auto start 4 browsers and have each run via differnt ips -  *** if you get error make sure you have working proxy server in the txt file reference in script
+This is the python menu starter ( starts up 4 urls with different proxies) - if you take the DDOS html page and upload it to webserver you can auto start 4 browsers and have each run via different IPS -  *also suggest running behind VPN*
+
+*** if you get error make sure you have working proxy server in the txt file reference in script
 
 ![screenshotddos-menu](https://user-images.githubusercontent.com/46620390/161365481-f893b653-311c-4acc-b477-1b4c91c85e68.png)
 
