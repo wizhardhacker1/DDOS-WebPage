@@ -1,6 +1,8 @@
+# version 1.0 - DAS 2022
 # import all modules
 import os
 import random
+import sys
 import time
 import requests
 import wget
@@ -130,48 +132,59 @@ for i in range(5):
     proxy = random_ip4
 
 
-# Testing URLs
-url = 'http://httpbin.org/ip'
-url2 = 'http://icanhazip.com'
-url3 = 'http://httpbin.org/ip'
-url4 = 'http://httpbin.org/ip'
+
+#  URLs
+url = input(Fore.BLACK + Back.YELLOW + " Enter first site OPEN - include http:// >> ")
+url2 = input(Fore.BLACK + Back.YELLOW + "Enter second site OPEN - include http:// >> ")
+url3 = input(Fore.BLACK + Back.YELLOW + "Enter third site OPEN - include http:// >> ")
+url4 = input(Fore.BLACK + Back.YELLOW + "Enter fourth site OPEN - include http:// >> ")
+
+
 
 # browser 1 starting
 s = Service('chromedriver.exe')
 browser_options = Options()
 browser_options.add_experimental_option("detach", True)
+browser_options.add_argument('log-level=3')
 PROXY = random_ip
 browser_options.add_argument(f'user-agent={userAgent}')
 browser_options.add_argument('--proxy-server=%s' % PROXY)
 browser = webdriver.Chrome(service=s, options=browser_options)
 browser.get(url)
+sys.tracebacklimit = 0
 
 # browser 2 starting
 t = Service('chromedriver.exe')
 browser_options = Options()
 browser_options.add_experimental_option("detach", True)
+browser_options.add_argument('log-level=3')
 PROXY = random_ip2
 browser_options.add_argument(f'user-agent={userAgent}')
 browser_options.add_argument('--proxy-server=%s' % PROXY)
 browser = webdriver.Chrome(service=t, options=browser_options)
 browser.get(url2)
+sys.tracebacklimit = 0
 
 # browser 3 starting
 z = Service('chromedriver.exe')
 browser_options = Options()
 browser_options.add_experimental_option("detach", True)
+browser_options.add_argument('log-level=3')
 PROXY = random_ip3
 browser_options.add_argument(f'user-agent={userAgent}')
 browser_options.add_argument('--proxy-server=%s' % PROXY)
 browser = webdriver.Chrome(service=z, options=browser_options)
 browser.get(url3)
+sys.tracebacklimit = 0
 
 # browser 4 starting
 y = Service('chromedriver.exe')
 browser_options = Options()
 browser_options.add_experimental_option("detach", True)
+browser_options.add_argument('log-level=3')
 PROXY = random_ip4
 browser_options.add_argument(f'user-agent={userAgent}')
 browser_options.add_argument('--proxy-server=%s' % PROXY)
 browser = webdriver.Chrome(service=y, options=browser_options)
 browser.get(url4)
+sys.tracebacklimit = 0
