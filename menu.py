@@ -27,8 +27,9 @@ time.sleep(5)
 url = "https://raw.githubusercontent.com/mertguvencli/http-proxy-list/main/proxy-list/data.txt"
 wget.download(url, 'https-downloaded.txt')
 
-# setting proxy file var  - http.txt is a custom - not automatic updated
-myproxy = 'https.txt'
+# setting proxy file var  - https.txt is a custom - not automatic updated
+#  errors may occure using the link above as proxy servers in the list are oftern down 
+myproxy = 'https-downloaded.txt'
 
 
 # define colors
