@@ -28,7 +28,7 @@ url = "https://raw.githubusercontent.com/mertguvencli/http-proxy-list/main/proxy
 wget.download(url, 'https-downloaded.txt')
 
 # setting proxy file var  - https.txt is a custom - not automatic updated
-#  errors may occure using the link above as proxy servers in the list are oftern down 
+#  errors may happen using the link above the proxies in the list are often down recommend using other downloads
 myproxy = 'https-downloaded.txt'
 
 
