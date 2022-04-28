@@ -1,14 +1,14 @@
 # version 1.0 - DAS 2022
 # import all modules
 import os
-import random
 import sys
 import time
 import requests
 import wget
 from colorama import Back, Fore
-from random_user_agent.params import SoftwareName, OperatingSystem
+import random
 from random_user_agent.user_agent import UserAgent
+from random_user_agent.params import SoftwareName, OperatingSystem
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
